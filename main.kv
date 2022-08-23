@@ -1,0 +1,149 @@
+WindowManager:
+    LoginScreen:
+    PasswordScreen:
+    TwitterPassword:
+    TiktokPassword:
+    FacebookPassword:
+
+<LoginScreen>:
+    name: "login"
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: 'Email'
+                color: (126/255, 236/255, 252/255, 1)
+                font_size: 54
+            
+            TextInput:
+                id: email
+                multiline: False
+                background_color: (126/255, 236/255, 252/255, 1)
+                font_size: 28
+
+            Label:
+                text: 'Password'
+                color: (126/255, 236/255, 252/255, 1)
+                font_size: 54
+
+            TextInput:
+                id: passw
+                multiline: False
+                background_color: (126/255, 236/255, 252/255, 1)
+                font_size: 28
+       
+        Button:
+            text: 'Submit'
+            background_color: (126/255, 236/255, 252/255, 1)
+            font_size: 54
+            on_release: 
+                app.root.current = "password" if passw.text == "123" and email.text == 'test' else "login"
+                root.manager.transition.direction = "left"
+
+<PasswordScreen>:
+    name: "password"
+    
+    GridLayout:
+        cols: 1
+            
+        Button:
+            text: "Twitter"
+            background_color: (0/255, 0/255, 0/255, 1)
+            on_release:
+                app.root.current = "twitter"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Tiktok"
+            background_color: (126/255, 236/255, 252/255, 1)
+            on_release:
+                app.root.current = "tiktok"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Facebook"
+            background_color: (0/255, 0/255, 0/255, 1)
+            on_release:
+                app.root.current = "facebook"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Go Back"
+            background_color: (126/255, 236/255, 252/255, 1)
+            on_release: 
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+
+<TwitterPassword>:
+    name: "twitter"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 1
+
+            Label:
+                text: "Your Twitter password is: 123"
+                font_size: 20
+
+            Label:
+                text: 'Your Twitter Username is testexample'
+                font_size: 20
+
+        Button:
+            text: 'Go Back'
+            background_color: (126/255, 236/255, 252/255, 1)
+            font_size: 54
+            on_release:
+                app.root.current = "password"
+                root.manager.transition.direction = "right"
+
+<TiktokPassword>:
+    name: "tiktok"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 1
+            
+            Label:
+                text: "Your Tiktok password is: 123"
+                font_size: 20
+
+            Label:
+                text: 'Your Tiktok username is: testexample'
+                font_size: 20
+    
+        Button:
+            text: 'Go Back'
+            background_color: (126/255, 236/255, 252/255, 1)
+            font_size: 54
+            on_release:
+                app.root.current = "password"
+                root.manager.transition.direction = "right"
+
+<FacebookPassword>:
+    name: "facebook"
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 1
+            
+            Label:
+                text: "Your Facebook password is: 123"
+                font_size: 20
+
+            Label:
+                text: 'Your Facebook username is: testexample'
+                font_size: 20
+    
+        Button:
+            text: 'Go Back'
+            background_color: (126/255, 236/255, 252/255, 1)
+            font_size: 54
+            on_release:
+                app.root.current = "password"
+                root.manager.transition.direction = "right"
+
